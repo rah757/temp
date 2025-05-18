@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY synthetic/stream_haptic.py ./stream_haptic.py
+COPY SimData /SimData         
+RUN pip install pyzmq
+CMD ["python", "stream_haptic.py", "--run", "run01"]
+
+

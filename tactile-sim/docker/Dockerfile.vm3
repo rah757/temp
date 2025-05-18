@@ -1,0 +1,6 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY synthetic/stream_video.py ./stream_video.py
+COPY SimData /SimData
+RUN pip install pyzmq
+CMD ["python", "stream_video.py", "--run", "run01"]

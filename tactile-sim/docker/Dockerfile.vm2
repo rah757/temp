@@ -1,0 +1,5 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY control/filter_haptic.py ./filter_haptic.py
+RUN pip install pyzmq
+CMD ["python", "filter_haptic.py"]
